@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
                     return walkSpeed;
                 }
 
-
                 else
                 {
                     return airWalkSpeed;
