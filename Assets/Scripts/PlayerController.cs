@@ -6,10 +6,11 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    Animator animator; 
     public float walkSpeed = 5f; 
     Vector2 moveInput; 
     [SerializeField]
-    private bool _isMoving = false; 
+    private bool _isMoving = true; 
     public bool IsMoving { get {
 
         return _isMoving; 
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     } }
     Rigidbody2D rb; 
 
-    Animator animator; 
+    
     private void Awake() 
     {
         rb = GetComponent<Rigidbody2D>(); 
