@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 687306132}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 687306132}
 --- !u!1 &1193252725
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 687306132}
 --- !u!1 &1514634683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 687306132}
 --- !u!1 &1933783553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 687306132}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
