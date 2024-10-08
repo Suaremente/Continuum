@@ -12,14 +12,34 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     TouchingSpaceDirections touchingDirections;
 
+    [SerializeField]
+    public float airWalkSpeed = 5f; 
+
+    [SerializeField]
     public float walkSpeed = 5f;
+
+    [SerializeField]
     private float jumpImpulse = 10f;
 
     public float CurrentMoveSpeed
     {
         get
         {
-            if (IsMoving && !touchingDirections.IsOnWall) return walkSpeed; return 0;
+            if (IsMoving && !touchingDirections.IsOnWall)
+            {
+                if (touchingDirections.IsGrounded)
+                {
+                    return walkSpeed;
+                }
+
+
+                else
+                {
+                    return airWalkSpeed;
+                }
+            }
+            
+            return 0;
         }
     } 
 
