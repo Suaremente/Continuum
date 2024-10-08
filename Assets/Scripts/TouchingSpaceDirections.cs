@@ -16,11 +16,16 @@ public class TouchingSpaceDirections : MonoBehaviour
         return _isGrounded; 
     } private set {
         _isGrounded = value;
-        animator.SetBool("isGrounded", value); 
+        animator.SetBool(AnimationStrings.isGrounded, value); 
     } } 
+
+
     private void Awake() {
         touchingCol = GetComponent<CapsuleCollider2D>(); 
+        animator = GetComponent<Animator>();
     }
+
+
     void FixedUpdate()
     {
         IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0; 
