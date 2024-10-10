@@ -185,9 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b77928a37a8dd54885eab79747b421b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airWalkSpeed: 9
-  walkSpeed: 9
+  airWalkSpeed: 10
+  walkSpeed: 12
   jumpImpulse: 12
+  maxJumpCount: 1
   _isMoving: 0
   _isFacingRight: 1
 --- !u!114 &266198786769305693
