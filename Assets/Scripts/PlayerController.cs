@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -74,7 +75,23 @@ public class PlayerController : MonoBehaviour
             _isFacingRight = value;
         }
     }
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
 
+    }
+
+    public bool IsAlive {
+
+        get {
+
+            return animator.GetBool(AnimationStrings.isAlive); 
+        }
+    
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -84,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
 
       
@@ -92,15 +109,26 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;  
         }
+
+        if (CanMove)
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+
+        else rb.velocity = new Vector2(0, 0);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
-        IsMoving = moveInput != Vector2.zero;
+        if (IsAlive) {
 
-        SetFacingDirection(moveInput);
+            IsMoving = moveInput != Vector2.zero;
+
+            SetFacingDirection(moveInput);
+
+        }
+        else IsMoving = false;
+
     }
 
     private void SetFacingDirection(Vector2 moveInput)

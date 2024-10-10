@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 3140350660691257868}
   - component: {fileID: 4208223884540380656}
   - component: {fileID: 6452914108826986702}
+  - component: {fileID: 6397377736290653049}
   m_Layer: 8
   m_Name: PunkGrunt
   m_TagString: Untagged
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
+  walkStopRate: 0.02
   attackZone: {fileID: 2453065561078383887}
   _hasTarget: 0
 --- !u!114 &4208223884540380656
@@ -308,6 +310,22 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10958266, y: -0.019035697}
-  m_Size: {x: 1.0011239, y: 1.8018067}
+  m_Offset: {x: -0.10958266, y: -0.06324279}
+  m_Size: {x: 1.0011239, y: 1.8902209}
   m_Direction: 0
+--- !u!114 &6397377736290653049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229494255284155757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a569fe216a0b7488b48cb52d35bad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvincible: 0
