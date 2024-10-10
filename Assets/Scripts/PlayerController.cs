@@ -22,9 +22,9 @@ public class PlayerController : MonoBehaviour
     private float jumpImpulse = 10f;
 
     [SerializeField]
-    private int maxJumpCount = 2;  // Maximum number of jumps (for double jump)
+    private int maxJumpCount = 2;  
 
-    private int jumpCount = 0;  // Tracks how many jumps have been performed
+    private int jumpCount = 0;  
 
     public float CurrentMoveSpeed
     {
@@ -87,10 +87,10 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
 
-        // Reset jump count when grounded
+      
         if (touchingDirections.IsGrounded)
         {
-            jumpCount = 0;  // Reset jump count when player is grounded
+            jumpCount = 0;  
         }
     }
 
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-            jumpCount++;  // Increment jump count after each jump
+            jumpCount++;  
         }
     }
 
@@ -130,6 +130,13 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             animator.SetTrigger(AnimationStrings.attackTrigger);
+        }
+    }
+
+    public void OnBlock(InputAction.CallbackContext context)
+    {
+        if (context.started) { 
+            animator.SetTrigger(AnimationStrings.blockTrigger);
         }
     }
 }
