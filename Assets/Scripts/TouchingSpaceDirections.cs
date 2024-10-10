@@ -63,8 +63,7 @@ public class TouchingSpaceDirections : MonoBehaviour
         touchingCol = GetComponent<CapsuleCollider2D>(); 
         animator = GetComponent<Animator>();
     }
-     
-
+   
     void FixedUpdate()
     {
         IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
