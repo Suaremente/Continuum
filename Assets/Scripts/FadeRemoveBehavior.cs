@@ -9,7 +9,7 @@ public class FadeRemoveBehavior : StateMachineBehaviour
     private float timeElapsed = 0;
     SpriteRenderer spriteRenderer;
     GameObject objToRemove;
-    Color startColor; 
+    Color startColor;  
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
