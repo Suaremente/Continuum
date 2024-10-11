@@ -4267,17 +4267,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 220611839893928853, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
-      propertyPath: m_Size.y
-      value: 2.675323
+    - target: {fileID: 1742131159749516923, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
+      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 220611839893928853, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.051294092
+    - target: {fileID: 1742131159749516923, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
+      propertyPath: damageableHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 220611839893928853, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
-      propertyPath: m_Offset.y
-      value: -2.4849696
+    - target: {fileID: 1742131159749516923, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
+      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5426975925763505557, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
       propertyPath: m_Name
@@ -4710,14 +4710,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5843594594531707282, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
-      propertyPath: m_Size.x
-      value: 1.373364
-      objectReference: {fileID: 0}
-    - target: {fileID: 5843594594531707282, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.58113074
-      objectReference: {fileID: 0}
     - target: {fileID: 6057047613803714828, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.2
@@ -4761,6 +4753,14 @@ PrefabInstance:
     - target: {fileID: 6229494255284155757, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_Name
       value: PunkGrunt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397377736290653049, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
+      propertyPath: _maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397377736290653049, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
+      propertyPath: isInvincible
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
