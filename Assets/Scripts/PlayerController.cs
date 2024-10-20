@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingSpaceDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingSpaceDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
 
@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Vector2 moveInput;
     TouchingSpaceDirections touchingDirections;
+    Damageable damageable;
 
     [SerializeField]
     public float airWalkSpeed = 5f;
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingSpaceDirections>();
+        damageable = GetComponent<Damageable>();
     }
 
     private void FixedUpdate()
