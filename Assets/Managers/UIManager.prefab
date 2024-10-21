@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8246415461422896722}
   - component: {fileID: 7652927005958336927}
+  - component: {fileID: 8384704760459718622}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -47,3 +48,20 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 5610734820306620464, guid: 09588f2ccfde38548955310e8d1f64c0, type: 3}
   healthTextPrefab: {fileID: 5610734820306620464, guid: a58a471487de5774a8b71645f8a5025e, type: 3}
   gameCanvas: {fileID: 0}
+--- !u!114 &8384704760459718622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066689556775799634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e252a6afaa053e5489adc6e7f29b2ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 60
+  countdownText: {fileID: 0}
+  onTimerEnd:
+    m_PersistentCalls:
+      m_Calls: []
