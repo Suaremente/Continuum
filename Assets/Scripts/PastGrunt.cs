@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingSpaceDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingSpaceDirections), typeof(Damageable))]
 public class PastGrunt : MonoBehaviour
 {
 
@@ -17,6 +17,7 @@ public class PastGrunt : MonoBehaviour
     Rigidbody2D rb;
     TouchingSpaceDirections touchingDirections;
     private Animator animator;
+    Damageable damageable; 
 
     public enum WalkableDirection { Left, Right } 
 
@@ -79,7 +80,8 @@ public class PastGrunt : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>(); 
         touchingDirections = GetComponent<TouchingSpaceDirections>();
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
+        damageable = GetComponent<Damageable>();
     }
 
     private void FixedUpdate() {
