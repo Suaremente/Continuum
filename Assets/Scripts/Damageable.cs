@@ -122,7 +122,7 @@ public class Damageable : MonoBehaviour
     // Returns whether the character was healed or not
     public bool Heal(int healthRestore)
     {
-        if (IsAlive && Health < MaxHealth)
+        if (IsAlive)
         {
             int maxHeal = Mathf.Max(MaxHealth - Health, 0);
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
