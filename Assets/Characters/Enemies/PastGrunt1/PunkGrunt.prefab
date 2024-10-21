@@ -346,13 +346,13 @@ MonoBehaviour:
   damageableHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8945870952456893202}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 3140350660691257868}
+        m_TargetAssemblyTypeName: PastGrunt, Assembly-CSharp
+        m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -364,11 +364,11 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 20
+  _health: 20
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.5
+  invincibilityTime: 1.5
 --- !u!1 &7694974426873709337
 GameObject:
   m_ObjectHideFlags: 0
