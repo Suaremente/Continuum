@@ -27,6 +27,7 @@ public class HealthPickup : MonoBehaviour
                 if (pickupSource)
                     AudioSource.PlayClipAtPoint(pickupSource.clip, gameObject.transform.position, pickupSource.volume);
 
+
                 Destroy(gameObject);
             }
                 
