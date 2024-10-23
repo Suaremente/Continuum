@@ -4585,7 +4585,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4610,7 +4610,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.95, y: -4.2504, z: -9.975862}
+  m_LocalPosition: {x: -10.95, y: -5.5940003, z: -9.975862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4945,6 +4945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PunkGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 6397377736290653049, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
+      propertyPath: invincibilityTime
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5004,7 +5008,7 @@ MonoBehaviour:
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.487
+  m_ScreenY: 0.394
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -5189,7 +5193,7 @@ MonoBehaviour:
   m_Follow: {fileID: 687306132}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 5.4
+    OrthographicSize: 7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5215,7 +5219,7 @@ Transform:
   m_GameObject: {fileID: 1193252725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.95, y: -4.2504, z: -9.975862}
+  m_LocalPosition: {x: -10.95, y: -5.5940003, z: -9.975862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
