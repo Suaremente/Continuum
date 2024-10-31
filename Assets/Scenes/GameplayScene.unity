@@ -4017,7 +4017,6 @@ GameObject:
   - component: {fileID: 141214771}
   - component: {fileID: 141214773}
   - component: {fileID: 141214772}
-  - component: {fileID: 141214774}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -4141,24 +4140,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141214770}
   m_CullTransparentMesh: 1
---- !u!114 &141214774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141214770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e252a6afaa053e5489adc6e7f29b2ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startTime: 10
-  countdownText: {fileID: 141214772}
-  onTimerEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  playerDamageable: {fileID: 687306134}
 --- !u!1 &423968604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8977,9 +8958,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384704760459718622, guid: 225d6fd3551ebb945866481233130390, type: 3}
+      propertyPath: startTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384704760459718622, guid: 225d6fd3551ebb945866481233130390, type: 3}
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 141214772}
+    - target: {fileID: 8384704760459718622, guid: 225d6fd3551ebb945866481233130390, type: 3}
+      propertyPath: playerDamageable
+      value: 
+      objectReference: {fileID: 687306134}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
