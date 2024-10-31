@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;  // Import TextMeshPro namespace
+using TMPro;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -27,12 +28,22 @@ public class CountdownTimer : MonoBehaviour
     {
         if (isRunning)
         {
+            // Check if player is still alive
+            if (playerDamageable.Health == 0f)
+            {
+                isRunning = false;
+                Debug.Log("Player has died. Stopping the timer.");
+                return;
+            }
+
+            // Countdown timer
             currentTime -= Time.deltaTime;
             if (currentTime <= 0)
             {
                 currentTime = 0;
                 isRunning = false;
                 TimerEnd();
+                return;    
             }
             UpdateTimerDisplay();
         }
