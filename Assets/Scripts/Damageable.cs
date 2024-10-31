@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
@@ -10,20 +8,15 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, int> healthChanged;
 
     Animator animator;
+    private PlayerBlock playerBlock; 
 
     [SerializeField]
     private int _maxHealth = 100;
 
     public int MaxHealth
     {
-        get
-        {
-            return _maxHealth;
-        }
-        set
-        {
-            _maxHealth = value;
-        }
+        get { return _maxHealth; }
+        set { _maxHealth = value; }
     }
 
     [SerializeField]
@@ -31,16 +24,12 @@ public class Damageable : MonoBehaviour
 
     public int Health
     {
-        get
-        {
-            return _health;
-        }
+        get { return _health; }
         set
         {
             _health = value;
             healthChanged?.Invoke(_health, MaxHealth);
 
-            // If health drops below 0, character is no longer alive
             if (_health <= 0)
             {
                 IsAlive = false;
@@ -59,29 +48,19 @@ public class Damageable : MonoBehaviour
 
     public bool IsAlive
     {
-        get
-        {
-            return _isAlive;
-        }
+        get { return _isAlive; }
         set
         {
             _isAlive = value;
             animator.SetBool(AnimationStrings.isAlive, value);
-            Debug.Log("IsAlive set " + value);
-
-            if (value == false)
-            {
-                damageableDeath.Invoke();
-            }
+            if (!value) damageableDeath.Invoke();
         }
     }
-
-    // The velocity should not be changed while this is true but needs to be respected by other physics components like
-    // the player controller
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        playerBlock = GetComponent<PlayerBlock>(); // Initialize the block reference
     }
 
     private void Update()
@@ -90,7 +69,6 @@ public class Damageable : MonoBehaviour
         {
             if (timeSinceHit > invincibilityTime)
             {
-                // Remove invincibility
                 isInvincible = false;
                 timeSinceHit = 0;
             }
@@ -99,15 +77,19 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    // Returns whether the damageable took damage or not
     public bool Hit(int damage, Vector2 knockback)
     {
+        // Check if the player is blocking
+        if (playerBlock != null && playerBlock.IsBlocking())
+        {
+            Debug.Log("Block absorbed damage!");
+            return false;
+        }
+
         if (IsAlive && !isInvincible)
         {
             Health -= damage;
-            isInvincible = true; 
-
-            // Notify other subscribed components that the damageable was hit to handle the knockback and such
+            isInvincible = true;
             animator.SetTrigger(AnimationStrings.hitTrigger);
             damageableHit?.Invoke(damage, knockback);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
@@ -115,11 +97,9 @@ public class Damageable : MonoBehaviour
             return true;
         }
 
-        // Unable to be hit
         return false;
     }
 
-    // Returns whether the character was healed or not
     public bool Heal(int healthRestore)
     {
         if (IsAlive)
@@ -127,7 +107,7 @@ public class Damageable : MonoBehaviour
             int maxHeal = Mathf.Max(MaxHealth - Health, 0);
             int actualHeal = Mathf.Min(maxHeal, healthRestore);
             Health += actualHeal;
-            CharacterEvents.characterHealed(gameObject, actualHeal);
+            CharacterEvents.characterHealed.Invoke(gameObject, actualHeal);
             return true;
         }
 

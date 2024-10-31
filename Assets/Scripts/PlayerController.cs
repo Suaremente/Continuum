@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
     public void OnBlock(InputAction.CallbackContext context)
     {
         if (context.started) { 
-            animator.SetTrigger(AnimationStrings.blockTrigger);
+            animator.SetTrigger(AnimationStrings.isBlocking);
         }
     }
 

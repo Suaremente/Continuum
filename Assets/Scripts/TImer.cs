@@ -5,13 +5,16 @@ using UnityEngine.Events;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float startTime = 60f;  // Time in seconds for countdown
+    public float startTime = 10f;  // Time in seconds for countdown
     private float currentTime;
 
     public TextMeshProUGUI countdownText;  // Reference to a TextMeshProUGUI element
     public UnityEvent onTimerEnd;  // Event to trigger when countdown reaches zero
 
     private bool isRunning = false;
+
+    [SerializeField]
+    private Damageable playerDamageable;  // Reference to the player's Damageable component
 
     void Start()
     {
@@ -59,6 +62,16 @@ public class CountdownTimer : MonoBehaviour
     {
         Debug.Log("Countdown Ended!");
         onTimerEnd?.Invoke(); // Trigger any event on timer end
+
+        // Kill the player by setting health to zero
+        if (playerDamageable != null)
+        {
+            playerDamageable.Health = 0;  // This triggers death in the Damageable script
+        }
+        else
+        {
+            Debug.LogWarning("Player Damageable component is not assigned!");
+        }
     }
 
     // Updates the displayed time on the UI

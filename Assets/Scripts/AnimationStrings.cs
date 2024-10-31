@@ -13,7 +13,7 @@ internal class AnimationStrings
     internal static string isOnWall = "isOnWall";
     internal static string isOnCeiling = "isOnCeiling";
     internal static string attackTrigger = "attack";
-    internal static string blockTrigger = "block";
+    internal static string isBlocking = "isBlocking";
     internal static string hasTarget = "hasTarget";
     internal static string canMove = "canMove";
     internal static string isAlive = "isAlive";

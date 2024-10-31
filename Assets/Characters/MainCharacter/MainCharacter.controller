@@ -129,7 +129,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: block
+    m_ConditionEvent: isBlocking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3892497759984400237}
@@ -171,18 +171,18 @@ AnimatorStateMachine:
   - {fileID: -954700527997196848}
   m_EntryTransitions: []
   m_StateMachineTransitions:
+  - first: {fileID: -8751057577163595494}
+    second:
+    - {fileID: -5440775177316229914}
+  - first: {fileID: -6278778535335466237}
+    second:
+    - {fileID: 6261519620607234365}
+    - {fileID: -5400145262857552466}
   - first: {fileID: 6297372115104320785}
     second:
     - {fileID: 5172281473122014847}
     - {fileID: 6083436372000533031}
     - {fileID: 6653426773761007385}
-  - first: {fileID: -6278778535335466237}
-    second:
-    - {fileID: 6261519620607234365}
-    - {fileID: -5400145262857552466}
-  - first: {fileID: -8751057577163595494}
-    second:
-    - {fileID: -5440775177316229914}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 530, y: 220, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
@@ -654,8 +654,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isMoving
+  - m_ConditionMode: 2
+    m_ConditionEvent: isBlocking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8505132135118427072}
@@ -1048,12 +1048,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: block
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: isAlive
     m_Type: 4
     m_DefaultFloat: 0
@@ -1068,6 +1062,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: Hit
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isBlocking
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
