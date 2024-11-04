@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 1742131159749516923}
   - component: {fileID: 4089753936797695492}
   - component: {fileID: 9124873712407449236}
+  - component: {fileID: 4945109787656548377}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -235,6 +236,7 @@ Transform:
   m_Children:
   - {fileID: 6983224369423828826}
   - {fileID: 1877702058237694050}
+  - {fileID: 7590062694329123412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3870733380984606454
@@ -390,6 +392,7 @@ MonoBehaviour:
   maxJumpCount: 1
   _isMoving: 0
   _isFacingRight: 1
+  heavyAttackCooldown: 2
 --- !u!114 &266198786769305693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +530,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2dfef9a6-ba07-4264-aa0b-07383a627d9b
     m_ActionName: Player/HeavyAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6194e8e6-b524-4b6b-a5ce-21b17ff59e0d
+    m_ActionName: Player/RangedAttack[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -630,3 +637,48 @@ MonoBehaviour:
   isBlocking: 0
   blockDuration: 0.5
   blockCooldown: 0
+--- !u!114 &4945109787656548377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426975925763505557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44520a2360475704a81f37a578636d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchPoint: {fileID: 7590062694329123412}
+  projectilePrefab: {fileID: 2118866800984844283, guid: 121a4fc0ec4949b408bd55b6b251ab4f, type: 3}
+--- !u!1 &6133088680741461036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7590062694329123412}
+  m_Layer: 7
+  m_Name: Ranged Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7590062694329123412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133088680741461036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.86, y: -1.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6165927787518598996}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

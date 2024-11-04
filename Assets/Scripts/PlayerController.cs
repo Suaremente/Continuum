@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     TouchingSpaceDirections touchingDirections;
     Damageable damageable;
-    private bool bufferedAttack = false;
     private bool bufferedHeavyAttack = false; 
 
     [SerializeField]
@@ -111,13 +110,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;
 
-            // Execute buffered regular attack on ground
-            if (bufferedAttack)
-            {
-                animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
-                bufferedAttack = false;
-            }
-
             // Execute buffered heavy attack on ground, if cooldown allows
             if (bufferedHeavyAttack && Time.time >= lastHeavyAttackTime + heavyAttackCooldown)
             {
@@ -172,19 +164,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if(context.started)
         {
-            if (!touchingDirections.IsGrounded)
-            {
-                // If already in the air, perform the attack immediately
-                animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
-                bufferedAttack = false;  // Clear any buffered attack
-            }
-            else
-            {
-                // If on the ground, set the attack to be buffered
-                bufferedAttack = true;
-            }
+            animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
         }
     }
     public void OnAttack(InputAction.CallbackContext context)
