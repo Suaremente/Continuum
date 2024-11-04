@@ -163,6 +163,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnHeavyAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            animator.SetTrigger(AnimationStrings.heavyAttackTrigger);
+        }
+    }
+
     public void OnBlock(InputAction.CallbackContext context)
     {
         if (context.started) { 
