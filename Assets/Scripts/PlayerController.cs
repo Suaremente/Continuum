@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     TouchingSpaceDirections touchingDirections;
     Damageable damageable;
+    private bool bufferedAttack = false;
+    private bool bufferedHeavyAttack = false; 
 
     [SerializeField]
     public float airWalkSpeed = 5f;
@@ -103,19 +105,32 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
 
-      
         if (touchingDirections.IsGrounded)
         {
-            jumpCount = 0;  
+            jumpCount = 0;
+
+            // Execute buffered regular attack on ground
+            if (bufferedAttack)
+            {
+                animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
+                bufferedAttack = false;
+            }
+
+            // Execute buffered heavy attack on ground, if cooldown allows
+            if (bufferedHeavyAttack && Time.time >= lastHeavyAttackTime + heavyAttackCooldown)
+            {
+                animator.SetTrigger(AnimationStrings.heavyAttackTrigger);
+                lastHeavyAttackTime = Time.time;
+                bufferedHeavyAttack = false;
+            }
         }
 
         if (CanMove)
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
-
-        else rb.velocity = new Vector2(0, 0);
+        else
+            rb.velocity = new Vector2(0, 0);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -155,6 +170,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnRangedAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (!touchingDirections.IsGrounded)
+            {
+                // If already in the air, perform the attack immediately
+                animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
+                bufferedAttack = false;  // Clear any buffered attack
+            }
+            else
+            {
+                // If on the ground, set the attack to be buffered
+                bufferedAttack = true;
+            }
+        }
+    }
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -162,12 +194,27 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(AnimationStrings.attackTrigger);
         }
     }
+    [SerializeField]
+    private float heavyAttackCooldown = 2f;  // Cooldown duration in seconds
+
+    private float lastHeavyAttackTime = -Mathf.Infinity;  // Tracks time of last heavy attack
 
     public void OnHeavyAttack(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            animator.SetTrigger(AnimationStrings.heavyAttackTrigger);
+            if (Time.time >= lastHeavyAttackTime + heavyAttackCooldown && touchingDirections.IsGrounded)
+            {
+                // Grounded heavy attack if cooldown allows, perform immediately
+                animator.SetTrigger(AnimationStrings.heavyAttackTrigger);
+                lastHeavyAttackTime = Time.time;
+                bufferedHeavyAttack = false;  // Clear buffer
+            }
+            else if (!touchingDirections.IsGrounded)
+            {
+                // Buffer heavy attack if attempted in air
+                bufferedHeavyAttack = false;
+            }
         }
     }
 
