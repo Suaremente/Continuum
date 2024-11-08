@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     TouchingSpaceDirections touchingDirections;
     Damageable damageable;
+    PauseMenu pauseMenu;
     private bool bufferedHeavyAttack = false; 
 
     [SerializeField]
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingSpaceDirections>();
         damageable = GetComponent<Damageable>();
+        pauseMenu = GetComponent<PauseMenu>();
     }
 
     private void FixedUpdate()
@@ -211,5 +213,12 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
           
+    }
+
+    public void OnDeath() {
+
+        Time.timeScale = 0f;
+        pauseMenu.goToMainMenu();
+
     }
 }

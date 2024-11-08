@@ -72,12 +72,13 @@ public class CountdownTimer : MonoBehaviour
     private void TimerEnd()
     {
         Debug.Log("Countdown Ended!");
-        onTimerEnd?.Invoke(); // Trigger any event on timer end
+        // Trigger any event on timer end
 
         // Kill the player by setting health to zero
         if (playerDamageable != null)
         {
-            playerDamageable.Health = 0;  // This triggers death in the Damageable script
+            playerDamageable.Health = 0;
+            onTimerEnd?.Invoke(); 
         }
         else
         {
