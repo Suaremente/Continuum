@@ -8,7 +8,7 @@ public class ChipCount : MonoBehaviour
     // Start is called before the first frame update
     
     [SerializeField]
-    int ChipNum;
+    public int ChipNum;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +16,7 @@ public class ChipCount : MonoBehaviour
         {
             ChipNum++;
             Debug.Log("Chip collided");
+            ChipCount2.instance.increaseCoins(ChipNum); 
         }
     }
 }
