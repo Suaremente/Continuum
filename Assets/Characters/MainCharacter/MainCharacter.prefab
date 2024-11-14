@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 4089753936797695492}
   - component: {fileID: 9124873712407449236}
   - component: {fileID: 4945109787656548377}
+  - component: {fileID: 1839312919852941837}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -231,7 +232,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.0331, y: 2.2147, z: 0.024138726}
-  m_LocalScale: {x: 0.77091247, y: 0.66588086, z: 0.17048618}
+  m_LocalScale: {x: 0.843224, y: 0.72834045, z: 0.18647778}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6983224369423828826}
@@ -600,7 +601,19 @@ MonoBehaviour:
         m_CallState: 2
   damageableDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: RetryMenu, Assembly-CSharp
+        m_MethodName: callRetry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -651,6 +664,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 7590062694329123412}
   projectilePrefab: {fileID: 2118866800984844283, guid: 121a4fc0ec4949b408bd55b6b251ab4f, type: 3}
+--- !u!114 &1839312919852941837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426975925763505557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62af9fe1adce04b4eb686bb0f9967fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chipText: {fileID: 0}
+  currentCoins: 0
 --- !u!1 &6133088680741461036
 GameObject:
   m_ObjectHideFlags: 0
