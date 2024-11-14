@@ -5788,7 +5788,7 @@ MonoBehaviour:
   _health: 500
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 0.25
+  invincibilityTime: 0.5
 --- !u!70 &1386790320
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5916,11 +5916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f29918fd47312c47936db5ab34386f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  walkStopRate: 0.02
-  attackZone: {fileID: 1279563998}
-  cliffDetectionZone: {fileID: 1918498933}
-  _hasTarget: 0
+  player: {fileID: 687306132}
+  isFlipped: 0
 --- !u!1 &1408739983
 GameObject:
   m_ObjectHideFlags: 0
@@ -9380,7 +9377,7 @@ GameObject:
   - component: {fileID: 1682349106}
   - component: {fileID: 1682349107}
   - component: {fileID: 1682349108}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: CoolAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9449,7 +9446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6105889565c5b7b4e981635d0a187bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 100
   knockback: {x: 0, y: 0}
 --- !u!1 &1686468097
 GameObject:
