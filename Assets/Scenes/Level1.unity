@@ -4098,6 +4098,100 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &62467919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62467920}
+  - component: {fileID: 62467921}
+  - component: {fileID: 62467922}
+  m_Layer: 10
+  m_Name: attackDistanceZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &62467920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62467919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1386790318}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &62467921
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62467919}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27183366, y: -0.40775013}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8348765, y: 2.2572298}
+  m_EdgeRadius: 0
+--- !u!114 &62467922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62467919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbfc635f1a40f4489f5da3675ec0ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoCollidersRemain:
+    m_PersistentCalls:
+      m_Calls: []
+  detectedColliders: []
 --- !u!114 &71753262 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1025588379778687630, guid: 225d6fd3551ebb945866481233130390, type: 3}
@@ -5171,11 +5265,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6057047613803714828, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.2
+      value: 2.33
       objectReference: {fileID: 0}
     - target: {fileID: 6057047613803714828, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.96
+      value: -5.87
       objectReference: {fileID: 0}
     - target: {fileID: 6057047613803714828, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5746,6 +5840,7 @@ Transform:
   m_Children:
   - {fileID: 1279563996}
   - {fileID: 1918498931}
+  - {fileID: 62467920}
   - {fileID: 1408739984}
   - {fileID: 1686468098}
   - {fileID: 1682349106}
@@ -5916,13 +6011,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f29918fd47312c47936db5ab34386f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  followSpeed: 5
+  walkSpeed: 7
+  followSpeed: 10
   walkStopRate: 0.02
   attackZone: {fileID: 1279563998}
   cliffDetectionZone: {fileID: 1918498933}
+  attackingZone: {fileID: 62467922}
   player: {fileID: 687306132}
   _hasTarget: 0
+  _attZone: 0
 --- !u!1 &1408739983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,13 +6031,13 @@ GameObject:
   - component: {fileID: 1408739984}
   - component: {fileID: 1408739985}
   - component: {fileID: 1408739986}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Punch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1408739984
 Transform:
   m_ObjectHideFlags: 0
@@ -5963,7 +6060,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408739983}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -5985,7 +6082,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.11065662, y: -0.5591068}
@@ -6336,6 +6433,10 @@ PrefabInstance:
     - target: {fileID: 6229494255284155757, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_Name
       value: PunkGrunt (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945870952456893202, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
+      propertyPath: m_Name
+      value: Attack
       objectReference: {fileID: 0}
     - target: {fileID: 9110653550869732554, guid: f5ff41c488e7cb54993d361d3a6b1000, type: 3}
       propertyPath: m_Enabled
@@ -9388,7 +9489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1682349106
 Transform:
   m_ObjectHideFlags: 0
@@ -9411,7 +9512,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682349105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -9433,7 +9534,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5183387, y: -0.7450428}
@@ -9451,7 +9552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6105889565c5b7b4e981635d0a187bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 100
+  attackDamage: 20
   knockback: {x: 0, y: 0}
 --- !u!1 &1686468097
 GameObject:
@@ -9464,13 +9565,13 @@ GameObject:
   - component: {fileID: 1686468098}
   - component: {fileID: 1686468099}
   - component: {fileID: 1686468100}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Kick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1686468098
 Transform:
   m_ObjectHideFlags: 0
@@ -9493,7 +9594,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686468097}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -9515,7 +9616,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.16307306, y: -0.50086665}

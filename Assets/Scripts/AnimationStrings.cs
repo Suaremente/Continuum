@@ -23,5 +23,6 @@ internal class AnimationStrings
     internal static string heavyAttackTrigger = "heavyAttack";
     internal static string rangedAttackTrigger = "rangedAttack";
     internal static string flipCooldown = "flipCooldown";
+    internal static string attZone = "attZone";
 }
  

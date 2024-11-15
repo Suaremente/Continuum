@@ -10,6 +10,7 @@ public class BikeBoss : MonoBehaviour
     public float walkStopRate = 0.02f;
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
+    public DetectionZone attackingZone;
     public Transform player; // Reference to the player's transform
 
     private Rigidbody2D rb;
@@ -54,6 +55,17 @@ public class BikeBoss : MonoBehaviour
         {
             _hasTarget = value;
             animator.SetBool(AnimationStrings.hasTarget, value);
+        }
+    }
+
+    public bool _attZone = false;
+    public bool attZone
+    {
+        get { return _attZone; }
+        private set
+        {
+            _attZone = value;
+            animator.SetBool(AnimationStrings.attZone, value);
         }
     }
 
@@ -145,6 +157,7 @@ public class BikeBoss : MonoBehaviour
     void Update()
     {
         HasTarget = attackZone.detectedColliders.Count > 0;
+        attZone = attackingZone.detectedColliders.Count > 0; 
 
         if (AttackCooldown > 0)
         {
