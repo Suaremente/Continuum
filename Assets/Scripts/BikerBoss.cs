@@ -124,7 +124,7 @@ public class BikeBoss : MonoBehaviour
             FlipDirection(); // Flip if no ground detected
         }
 
-        if (HasTarget && flipCooldown <= 0)
+        if (HasTarget && flipCooldown <= 0 && CanMove)
         {
             // Determine if the BikeBoss should flip to face the player
             Vector2 directionToPlayer = (player.position - transform.position).normalized;
