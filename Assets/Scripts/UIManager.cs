@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,27 +11,52 @@ public class UIManager : MonoBehaviour
     public GameObject healthTextPrefab;
 
     public Canvas gameCanvas;
+    void Start()
+    {
+        if (FindObjectOfType<UIManager>() == null)
+        {
+            Instantiate(Resources.Load<GameObject>("UIManager"));
+        }
+    }
 
     private void Awake()
     {
-        gameCanvas = FindObjectOfType<Canvas>();
-    }
+        if (FindObjectsOfType<UIManager>().Length > 1)
+        {
+            Destroy(gameObject); // Prevent duplicates
+            return;
+        }
 
-    private void OnEnable()
-    {
-        CharacterEvents.characterDamaged += CharacterTookDamage;
-        CharacterEvents.characterHealed += CharacterHealed;
+        DontDestroyOnLoad(gameObject); // Make this UIManager persistent
+        gameCanvas = FindObjectOfType<Canvas>(); // Reassign the canvas if needed in new scenes
     }
+private void OnEnable()
+{
+    SceneManager.sceneLoaded += OnSceneLoaded;
+    CharacterEvents.characterDamaged += CharacterTookDamage;
+    CharacterEvents.characterHealed += CharacterHealed;
+}
 
-    private void OnDisable()
-    {
-        CharacterEvents.characterDamaged -= CharacterTookDamage;
-        CharacterEvents.characterHealed -= CharacterHealed;
-    }
+private void OnDisable()
+{
+    SceneManager.sceneLoaded -= OnSceneLoaded;
+    CharacterEvents.characterDamaged -= CharacterTookDamage;
+    CharacterEvents.characterHealed -= CharacterHealed;
+}
+
+private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+{
+    gameCanvas = FindObjectOfType<Canvas>(); // Reassign canvas on scene load
+}
+
 
     public void CharacterTookDamage(GameObject character, int damageReceived)
     {
-        // Create text at character hit
+        if (damageTextPrefab == null)
+        {
+            damageTextPrefab = Resources.Load<GameObject>("damageTextPrefab");
+        }
+
         Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
 
         TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform)
@@ -39,8 +65,14 @@ public class UIManager : MonoBehaviour
         tmpText.text = damageReceived.ToString();
     }
 
-    public void CharacterHealed(GameObject character, int healthRestored)
-    {
+
+    public void CharacterHealed(GameObject character, int healthRestored) {  
+
+         if (healthTextPrefab == null)
+        {
+            healthTextPrefab = Resources.Load<GameObject>("healthTextPrefab");
+        }
+
         // Create text at character hit
         Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
 
