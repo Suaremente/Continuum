@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingSpaceDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+
+    public PlayerImport playerData;
     Rigidbody2D rb;
     Animator animator;
     Vector2 moveInput;
@@ -109,6 +112,14 @@ public class PlayerController : MonoBehaviour
         touchingDirections = GetComponent<TouchingSpaceDirections>();
         damageable = GetComponent<Damageable>();
         pauseMenu = GetComponent<PauseMenu>();
+
+        if (FindObjectsOfType<PlayerController>().Length > 1)
+        {
+            Destroy(gameObject); // Prevent duplicates if transitioning back to the same scene
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void FixedUpdate()
