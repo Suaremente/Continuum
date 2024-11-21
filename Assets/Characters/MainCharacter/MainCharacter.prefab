@@ -215,9 +215,9 @@ GameObject:
   - component: {fileID: 9124873712407449236}
   - component: {fileID: 4945109787656548377}
   - component: {fileID: 1839312919852941837}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,10 +387,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b77928a37a8dd54885eab79747b421b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: a246bd820fce06c4b812fda7b5957c20, type: 2}
   airWalkSpeed: 10
   walkSpeed: 12
   jumpImpulse: 12
   maxJumpCount: 1
+  dashSpeed: 10
+  dashDuration: 0.2
+  dashCooldown: 1
   _isMoving: 0
   _isFacingRight: 1
   heavyAttackCooldown: 2
