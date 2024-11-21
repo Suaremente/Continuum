@@ -221,7 +221,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1025588379778687630, guid: 225d6fd3551ebb945866481233130390, type: 3}
   m_PrefabInstance: {fileID: 3042070201606331077}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768215211}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52595b5614b3b4d4b845e525b09bcd81, type: 3}
@@ -813,24 +813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a569fe216a0b7488b48cb52d35bad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &768215211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3066689556775799634, guid: 225d6fd3551ebb945866481233130390, type: 3}
-  m_PrefabInstance: {fileID: 3042070201606331077}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &768215215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768215211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 154f08cb007ed2f458b107896fa272e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 0}
 --- !u!1001 &931241272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2049,11 +2031,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   detectedColliders: []
---- !u!1 &2044365948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5010603551290214619, guid: 225d6fd3551ebb945866481233130390, type: 3}
-  m_PrefabInstance: {fileID: 3042070201606331077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2059747305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2334,10 +2311,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1025588379778687630, guid: 225d6fd3551ebb945866481233130390, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 2044365948}
     - target: {fileID: 2410327343675149491, guid: 225d6fd3551ebb945866481233130390, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2410,17 +2383,10 @@ PrefabInstance:
       propertyPath: playerDamageable
       value: 
       objectReference: {fileID: 687306134}
-    - target: {fileID: 8384704760459718622, guid: 225d6fd3551ebb945866481233130390, type: 3}
-      propertyPath: onTimerEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 71753262}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3066689556775799634, guid: 225d6fd3551ebb945866481233130390, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 768215215}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 225d6fd3551ebb945866481233130390, type: 3}
 --- !u!1001 &3326842143863433089
 PrefabInstance:
