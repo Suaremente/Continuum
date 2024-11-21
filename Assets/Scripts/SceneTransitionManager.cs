@@ -1,8 +1,21 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : MonoBehaviour
 {
+
+    public CinemachineVirtualCamera virtualCamera;
+
+    private void Start()
+    {
+        // Find the player in the scene
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null && virtualCamera != null)
+        {
+            virtualCamera.Follow = player.transform;
+        }
+    }
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
