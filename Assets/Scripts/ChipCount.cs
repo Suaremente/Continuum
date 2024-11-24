@@ -6,30 +6,30 @@ using UnityEngine.SceneManagement;
 public class ChipCount : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+     
     [SerializeField]
     public int ChipNum;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+      
          if (collision.CompareTag("Chip"))
         {
             ChipNum++;
             Debug.Log("Chip collided");
             ChipCount2.instance.increaseCoins(ChipNum);
 
-            if (ChipNum == 50) {
+            if (ChipNum == 20) {
 
-                SceneManager.LoadScene("boss1"); 
-            
+              
             }
 
-            if (ChipNum == 100) {
+            if (ChipNum == 40) {
 
                //SceneManager.LoadScene("boss2");
             }
 
-            if (ChipNum == 150) {
+            if (ChipNum == 60) {
 
                 //SceneManager.LoadScene("boss3");
             }

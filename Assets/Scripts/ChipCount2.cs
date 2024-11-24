@@ -17,7 +17,7 @@ public class ChipCount2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chipText.text = currentCoins.ToString() + "/50"; 
+        chipText.text = currentCoins.ToString() + "/60"; 
     }
 
     // Update is called once per frame
@@ -29,6 +29,6 @@ public class ChipCount2 : MonoBehaviour
     public void increaseCoins(int v) {
 
         currentCoins++; 
-        chipText.text = currentCoins.ToString() + "/50";
+        chipText.text = currentCoins.ToString() + "/60";
     }
 }

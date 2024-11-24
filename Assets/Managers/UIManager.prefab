@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 120
-  countdownText: {fileID: 0}
+  countdownText: {fileID: 6284762083334971695}
   onTimerEnd:
     m_PersistentCalls:
       m_Calls:
@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1720008344642694694, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 87.2
+      value: -26.5
       objectReference: {fileID: 0}
     - target: {fileID: 2968574797377130595, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8541607914690384113}
+    - target: {fileID: 4396428795523269060, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}
+      propertyPath: countdownTimer
+      value: 
+      objectReference: {fileID: 8384704760459718622}
     - target: {fileID: 5541981747299430789, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -482,6 +486,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4251970263854970860, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}
   m_PrefabInstance: {fileID: 9118440198956367671}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6284762083334971695 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3007490709674122776, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}
+  m_PrefabInstance: {fileID: 9118440198956367671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8541607914690384113 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 577259170511105990, guid: 63797103b9a01a243a9f33c36395e6a7, type: 3}

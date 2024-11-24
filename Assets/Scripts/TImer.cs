@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using System;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -60,12 +61,14 @@ public class CountdownTimer : MonoBehaviour
     public void PauseCountdown()
     {
         isPaused = true;
+       
     }
 
     // Resumes the countdown
     public void ResumeCountdown()
     {
         isPaused = false;
+        
     }
 
     // Resets the countdown to the original time
