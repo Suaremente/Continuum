@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using Unity.VisualScripting;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class CountdownTimer : MonoBehaviour
     public UnityEvent onTimerEnd;  // Event to trigger when countdown reaches zero
 
     private bool isRunning = false;
+    private bool isPaused = false;  // New flag to handle pausing
 
     [SerializeField]
     private Damageable playerDamageable;  // Reference to the player's Damageable component
@@ -26,10 +26,10 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
-        if (isRunning)
+        if (isRunning && !isPaused)
         {
             // Check if player is still alive
-            if (playerDamageable.Health == 0f)
+            if (playerDamageable != null && playerDamageable.Health == 0f)
             {
                 isRunning = false;
                 Debug.Log("Player has died. Stopping the timer.");
@@ -43,7 +43,7 @@ public class CountdownTimer : MonoBehaviour
                 currentTime = 0;
                 isRunning = false;
                 TimerEnd();
-                return;    
+                return;
             }
             UpdateTimerDisplay();
         }
@@ -53,12 +53,19 @@ public class CountdownTimer : MonoBehaviour
     public void StartCountdown()
     {
         isRunning = true;
+        isPaused = false;
     }
 
     // Pauses the countdown
     public void PauseCountdown()
     {
-        isRunning = false;
+        isPaused = true;
+    }
+
+    // Resumes the countdown
+    public void ResumeCountdown()
+    {
+        isPaused = false;
     }
 
     // Resets the countdown to the original time
@@ -78,7 +85,7 @@ public class CountdownTimer : MonoBehaviour
         if (playerDamageable != null)
         {
             playerDamageable.Health = 0;
-            onTimerEnd?.Invoke(); 
+            onTimerEnd?.Invoke();
         }
         else
         {
