@@ -17,6 +17,7 @@ public class BikeBoss : MonoBehaviour
     private TouchingSpaceDirections touchingDirections;
     private Animator animator;
     private Damageable damageable;
+    public FloatingHealthBar healthBar;
 
     public enum WalkableDirection { Left, Right }
 
@@ -119,10 +120,12 @@ public class BikeBoss : MonoBehaviour
         touchingDirections = GetComponent<TouchingSpaceDirections>();
         animator = GetComponent<Animator>();
         damageable = GetComponent<Damageable>();
+        healthBar = GetComponent<FloatingHealthBar>();
     }
 
     private void FixedUpdate()
     {
+
         // Don't flip if we're already flipping or standing on something
         if (player == null)
         {
@@ -210,6 +213,8 @@ public class BikeBoss : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+      
+
     }
 
     public void OnCliffDetected()
