@@ -9,6 +9,7 @@ public class ChipCount2 : MonoBehaviour
     public static ChipCount2 instance;
     public TMP_Text chipText;
     public int currentCoins = 0;
+    public ChipCount ChipCount; 
 
     private void Awake()
     {
@@ -17,7 +18,7 @@ public class ChipCount2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chipText.text = currentCoins.ToString() + "/60"; 
+        chipText.text = currentCoins.ToString() + "/20"; 
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class ChipCount2 : MonoBehaviour
     public void increaseCoins(int v) {
 
         currentCoins++; 
-        chipText.text = currentCoins.ToString() + "/60";
+        chipText.text = currentCoins.ToString() + "/20";
+
     }
 }
