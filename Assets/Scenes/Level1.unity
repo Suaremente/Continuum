@@ -29688,7 +29688,8 @@ PrefabInstance:
       value: UIManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4578774935847803078, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
