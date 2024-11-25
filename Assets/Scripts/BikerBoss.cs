@@ -23,6 +23,18 @@ public class BikeBoss : MonoBehaviour
     private WalkableDirection _walkDirection;
     private Vector2 walkDirectionVector = Vector2.right;
 
+    private void Start()
+    {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("Player object not found! Ensure the Player has the tag 'Player'.");
+        }
+    }
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
@@ -112,7 +124,10 @@ public class BikeBoss : MonoBehaviour
     private void FixedUpdate()
     {
         // Don't flip if we're already flipping or standing on something
-
+        if (player == null)
+        {
+            return; // No player found, don't try to move
+        }
         if (touchingDirections.IsOnWall)
         {
             FlipDirection();
@@ -156,6 +171,16 @@ public class BikeBoss : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+        {
+            // Reattempt to find the player if it's null
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+            }
+            return;
+        }
         HasTarget = attackZone.detectedColliders.Count > 0;
         attZone = attackingZone.detectedColliders.Count > 0; 
 

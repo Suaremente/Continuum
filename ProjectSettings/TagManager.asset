@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chip
   - PlayerSpawnPoint
+  - Truck
   layers:
   - Default
   - TransparentFX

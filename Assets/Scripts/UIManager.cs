@@ -26,8 +26,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject); // Prevent duplicates
             return;
         }
-
-        DontDestroyOnLoad(gameObject); // Make this UIManager persistent
+ // Make this UIManager persistent
         gameCanvas = FindObjectOfType<Canvas>(); // Reassign the canvas if needed in new scenes
     }
 private void OnEnable()
