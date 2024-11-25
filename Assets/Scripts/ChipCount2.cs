@@ -9,7 +9,7 @@ public class ChipCount2 : MonoBehaviour
     public static ChipCount2 instance;
     public TMP_Text chipText;
     public int currentCoins = 0;
-    public ChipCount ChipCount; 
+    public GameObject obj; 
 
     private void Awake()
     {
@@ -29,8 +29,17 @@ public class ChipCount2 : MonoBehaviour
 
     public void increaseCoins(int v) {
 
+        if (currentCoins == 1)
+        {
+            obj = GameObject.FindWithTag("Truck");
+            obj.SetActive(false);
+        }
         currentCoins++; 
         chipText.text = currentCoins.ToString() + "/20";
-
+        if (currentCoins == 20) {
+            
+            obj.SetActive(true);
+        
+        }
     }
 }
