@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5244275133073132094, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.7185936
+      value: -5.66
       objectReference: {fileID: 0}
     - target: {fileID: 5244275133073132094, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -422,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6271856608305053822, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: sceneToLoad
-      value: tutorial
+      value: level2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
