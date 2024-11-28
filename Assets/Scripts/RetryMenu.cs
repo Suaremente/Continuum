@@ -6,24 +6,14 @@ using UnityEngine.SceneManagement;
 public class RetryMenu : MonoBehaviour
 {
 
-    public GameObject pauseMenu;
-    public GameObject Obj; 
+    public GameObject pauseMenu; 
     public bool isPaused;
-    // Start is called before the first frame update
-    public RetryMenu instance; 
+    public GameObject player; 
+
+    // Start is called before the first frame update 
     public void Awake()
     {
-        if (instance == null)
-        {
-            instance = this; // Assign this instance
-            DontDestroyOnLoad(Obj); // Persist this object across scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicates
-            return;
-        }
-
+        
         // Initialize pause menu
         pauseMenu.SetActive(false);
     }
@@ -42,7 +32,9 @@ public class RetryMenu : MonoBehaviour
 
     public void goToMainMenu()
     {
-     
+        player = GameObject.FindWithTag("Player");
+        Damageable damageable = player.GetComponent<Damageable>();
+        damageable.IsAlive = true;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
 
@@ -55,10 +47,23 @@ public class RetryMenu : MonoBehaviour
     }
 
     public void retryGame() {
-
+        player = GameObject.FindWithTag("Player");
+        Damageable damageable = player.GetComponent<Damageable>();
         Scene current = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current.name);
+        damageable.IsAlive = true; 
+        pauseMenu.SetActive(false); 
 
-    } 
+    }
 
+    public void Update()
+    {
+        player = GameObject.FindWithTag("Player");
+        Damageable damageable = player.GetComponent<Damageable>();
+        if (damageable.Health == 0) {
+            damageable.Health = 100;
+            pauseGame();
+           
+        }
+    }
 }
