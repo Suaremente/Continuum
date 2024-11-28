@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4201646487397580303, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Truck
       objectReference: {fileID: 0}
     - target: {fileID: 4531686387517461700, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1839312919852941837, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 1652386990}
     - target: {fileID: 1839312919852941837, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
       propertyPath: chipText
       value: 
@@ -1071,7 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4201646487397580303, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Truck
       objectReference: {fileID: 0}
     - target: {fileID: 4531686387517461700, guid: f54348c72f65d504ea1046596e30195f, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
