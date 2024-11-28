@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742131159749516923, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
       propertyPath: _health
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1742131159749516923, guid: 7851572bba8aaa4478d8a52704def482, type: 3}
       propertyPath: damageableDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

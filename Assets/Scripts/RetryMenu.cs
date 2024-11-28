@@ -8,7 +8,8 @@ public class RetryMenu : MonoBehaviour
 
     public GameObject pauseMenu; 
     public bool isPaused;
-    public GameObject player; 
+    public GameObject player;
+    public GameObject spawnpoint; 
 
     // Start is called before the first frame update 
     public void Awake()
@@ -48,6 +49,8 @@ public class RetryMenu : MonoBehaviour
 
     public void retryGame() {
         player = GameObject.FindWithTag("Player");
+        spawnpoint = GameObject.FindWithTag("PlayerSpawnPoint");
+        player.transform.position = spawnpoint.transform.position;
         Damageable damageable = player.GetComponent<Damageable>();
         Scene current = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current.name);
