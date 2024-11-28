@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
 
             if (isPaused)
             {
-
+                
                 resumeGame();
             }
             else
@@ -56,6 +56,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        pauseMenu.SetActive(false);
 
     }
 

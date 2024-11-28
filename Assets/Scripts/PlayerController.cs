@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     Damageable damageable;
     PauseMenu pauseMenu;
     private bool bufferedHeavyAttack = false;
+    private static PlayerController instance;   
 
     [SerializeField]
     public float airWalkSpeed = 5f;
@@ -113,13 +114,16 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         pauseMenu = GetComponent<PauseMenu>();
 
-        if (FindObjectsOfType<PlayerController>().Length > 1)
+        if (instance == null)
         {
-            Destroy(gameObject); // Prevent duplicates if transitioning back to the same scene
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Persist this instance across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instances
             return;
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void FixedUpdate()

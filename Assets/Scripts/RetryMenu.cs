@@ -7,11 +7,24 @@ public class RetryMenu : MonoBehaviour
 {
 
     public GameObject pauseMenu;
+    public GameObject Obj; 
     public bool isPaused;
     // Start is called before the first frame update
+    public RetryMenu instance; 
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this; // Assign this instance
+            DontDestroyOnLoad(Obj); // Persist this object across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicates
+            return;
+        }
 
-    public void Awake() { 
-    
+        // Initialize pause menu
         pauseMenu.SetActive(false);
     }
     public void callRetry() {

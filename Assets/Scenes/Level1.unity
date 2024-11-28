@@ -29683,6 +29683,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7077837133278577031, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
+      propertyPath: instance
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9063836465870268161, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
       propertyPath: m_Name
       value: UIManager

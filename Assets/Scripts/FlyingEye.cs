@@ -27,6 +27,14 @@ public class FlyingEye : MonoBehaviour
             animator.SetBool(AnimationStrings.hasTarget, value);
         }
     }
+
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
+    }
     // Update is called once per frame
     void Update()
     {

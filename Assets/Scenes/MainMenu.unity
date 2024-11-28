@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 93275687}
   - component: {fileID: 93275686}
   - component: {fileID: 93275690}
+  - component: {fileID: 93275691}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -327,6 +328,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2232610c19eeacc4da10010c270755bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &93275691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93275685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154f08cb007ed2f458b107896fa272e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &94330895
@@ -1019,9 +1032,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 93275690}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: goToScene
+      - m_Target: {fileID: 93275691}
+        m_TargetAssemblyTypeName: SceneTransitionManager, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

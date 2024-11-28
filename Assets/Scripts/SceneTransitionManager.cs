@@ -17,9 +17,11 @@ public class SceneTransitionManager : MonoBehaviour
     {
         // Find spawn point in the new scene
         GameObject spawnPoint = GameObject.FindWithTag("PlayerSpawnPoint");
-        if (spawnPoint != null && FindObjectOfType<PlayerController>() != null)
+        GameObject mainCharacter = GameObject.FindWithTag("Player");
+        Debug.Log("FDJKLFJ");
+        if (spawnPoint != null && mainCharacter!= null)
         {
-            FindObjectOfType<PlayerController>().transform.position = spawnPoint.transform.position;
+            mainCharacter.transform.position = spawnPoint.transform.position;
         }
 
         // Unsubscribe from event
