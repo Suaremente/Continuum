@@ -136,12 +136,7 @@ public class BikeBoss : MonoBehaviour
             FlipDirection();
         }
 
-        // Check for cliff detection but only flip if the boss is grounded
-        if (cliffDetectionZone.detectedColliders.Count == 0 && touchingDirections.IsGrounded)
-        {
-            FlipDirection(); // Flip if no ground detected
-        }
-
+        
         if (HasTarget && flipCooldown <= 0 && CanMove)
         {
             // Determine if the BikeBoss should flip to face the player
@@ -220,7 +215,6 @@ public class BikeBoss : MonoBehaviour
     public void OnCliffDetected()
     {
         // Only flip if grounded and not in a flip state
-        if (touchingDirections.IsGrounded)
-            FlipDirection();
+        
     }
 }

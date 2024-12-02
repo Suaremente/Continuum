@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class Dialogue : MonoBehaviour
 
     void EndDialogue()
     {
+        Scene activeScene = SceneManager.GetActiveScene();
         textComponent.text = string.Empty; // Clear the text
         gameObject.SetActive(false);      // Deactivate the dialogue object
 
@@ -46,8 +48,14 @@ public class Dialogue : MonoBehaviour
         {
             countdownTimer.ResumeCountdown(); // Resume the timer after dialogue ends
         }
+
+        if (activeScene.name == "endScene") SceneManager.LoadScene("MainMenu");
     }
 
+    void SpecialEndingDialouge() { 
+    
+        
+    }
     // Update is called once per frame
     void Update()
     {
