@@ -144,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917247288256982977, guid: 4b7b8bdc21acbc1438b98530faadf52e, type: 3}
       propertyPath: _health
-      value: 10
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4917247288256982977, guid: 4b7b8bdc21acbc1438b98530faadf52e, type: 3}
       propertyPath: _maxHealth
-      value: 140
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4917247288256982977, guid: 4b7b8bdc21acbc1438b98530faadf52e, type: 3}
       propertyPath: damageableHit.m_PersistentCalls.m_Calls.Array.size
@@ -489,6 +489,10 @@ PrefabInstance:
     - target: {fileID: 2482662406043673113, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6805882820935284123, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.619873
       objectReference: {fileID: 0}
     - target: {fileID: 9063836465870268161, guid: dc093d8fb985e944b8f225528fd9ab0f, type: 3}
       propertyPath: m_Name
@@ -1287,6 +1291,67 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!1001 &1466274314
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 565068909871108568, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 35ff1450836444a4d81e749a93746f6c, type: 3}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.571927
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.9374685
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.06384298
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321166039453740636, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329045238840859851, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4127d2d071d52b8429c254cd5dd9bba4, type: 3}
 --- !u!1 &1667512548
 GameObject:
   m_ObjectHideFlags: 0
@@ -7089,3 +7154,4 @@ SceneRoots:
   - {fileID: 2053530765}
   - {fileID: 289636160}
   - {fileID: 179198915}
+  - {fileID: 1466274314}
